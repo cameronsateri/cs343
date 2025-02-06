@@ -24,12 +24,6 @@
       const heading1 = '<h3>Course Information</h3>';
       const heading2 = '<h3>Detailed Course Objectives</h3>';
       const heading3 = '<h3>Course Catalog Description</h3>';
-
-      window.onload = () => {
-        document.getElementById('Course-Information').innerHTML = heading1;
-        document.getElementById('Detailed-Course-Objectives').innerHTML = heading2;
-        document.getElementById('Course-Catalog-Description').innerHTML = heading3;
-      };
     </script>
     <header>
 
@@ -52,10 +46,7 @@
     <hr>
 
     <!-- # Section header - MUST BE WRITTEN BY JAVASCRIPT -->
-    <section>
-      <div id="Course-Information"></div>
-      <h3>Course Information</h3>
-      <!-- # Two separate paragraphs -->
+    <section id="Course-Information">
       <p>Learning to work with the tools and technologies that are used to build and
         create web sites is both empowering and fun. With these tools, you can build
         your own web sites and customize the experience of those you visit. You can
@@ -69,9 +60,6 @@
         for a variety of users, including users with disabilities. After completing
         this course, you will have a solid foundation to continue learning more
         advanced web development techniques.</p>
-      <!-- # Make this a bullet-point list. Format the text as shown in the sample
-      # solution image. Note that <b> is NOT allowed for bold text. For the book
-      # title, use the <cite> tag to mark it as a citation. -->
       <ul>
         <li><strong>Website:</strong> <a href="https://w3.cs.jmu.edu/kirkpams/343">https://w3.cs.jmu.edu/kirkpams/343</a></li>
         <li><strong>Time:</strong> M/W/F 9:10 - 10:00 AM</li>
@@ -84,12 +72,8 @@
     <hr>
 
     <!-- # Section header - MUST BE WRITTEN BY JAVASCRIPT -->
-    <section>
-      <div id="Detailed-Course-Objectives"></div>
-      <h3>Detailed Course Objectives</h3>
-      <!-- # Paragraph -->
+    <section id="Detailed-Course-Objectives">
       <p>Following the successful completion of this course, students will be able to:</p>
-      <!-- # Make this a numbered list and do NOT hard-code the numbers -->
       <ol>
         <li>Summarize the key steps and processes for retrieving and displaying a web page.</li>
         <li>Structure text documents as HTML and publish them on a server.</li>
@@ -108,15 +92,12 @@
     <hr>
 
     <!-- # Section header - MUST BE WRITTEN BY JAVASCRIPT -->
-    <section>
-      <div id="Course-Catalog-Description"></div>
-      <h3>Course Catalog Description</h3>
-      <!-- # Paragraph -->
+    <section id="Course-Catalog-Description">
       <p>Projects or topics in computer science which are of interest to the lower
-    division student. May be repeated for credit when course content changes.
-    Topics may vary. <em>Prerequisite: Fully admitted Computer Science majors or
-    minors only and students should consult the instructor prior to enrolling
-    for the course.</em></p>
+      division student. May be repeated for credit when course content changes.
+      Topics may vary. <em>Prerequisite: Fully admitted Computer Science majors or
+      minors only and students should consult the instructor prior to enrolling
+      for the course.</em></p>
     </section>
 
     <!-- # HORIZONTAL LINE -->
@@ -140,5 +121,11 @@
       </div>
       <!-- # End of the <footer> -->
     </footer>
+
+    <script>
+      document.getElementById('Course-Information').innerHTML = heading1 + document.getElementById('Course-Information').innerHTML;
+      document.getElementById('Detailed-Course-Objectives').innerHTML = heading2 + document.getElementById('Detailed-Course-Objectives').innerHTML;
+      document.getElementById('Course-Catalog-Description').innerHTML = heading3 + document.getElementById('Course-Catalog-Description').innerHTML;
+    </script>
   </body>
 </html>
