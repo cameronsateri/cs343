@@ -1,4 +1,33 @@
 /* basics.css -- Controlling the spacing for Lab 4
- * author:
+ * author: cameron sateri
  */
 
+/* header styles */
+header {
+    margin: 0;
+    padding-top: 1vh;
+}
+
+/* headings font */
+h1, h2 {
+    font-family: sans-serif;
+}
+
+/* main styles */
+main {
+    padding: 20px;
+    width: 85%;
+    margin: auto;
+}
+
+/* section styles */
+section {
+    padding: 1% 1vw;
+    margin-top: 1vh;
+}
+
+/* paragraph styles */
+p {
+    padding: 1% 1vw;
+    margin-top: 10px;
+}

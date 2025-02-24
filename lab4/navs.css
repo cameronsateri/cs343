@@ -1,4 +1,35 @@
 /* navs.css -- Styling the nav elements for Lab 4
- * author:
+ * author: cameron sateri
  */
 
+/* navigation menu style */
+nav {
+    background: rgb(220, 220, 220);
+    border-radius: 10px;
+    border: 2px solid #450084;
+    margin: 20px;
+    padding: 0;
+}
+
+/* remove bullet points */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* style list items */
+nav ul li {
+    text-align: center;
+    padding: 10px;
+    border-bottom: 2px solid #450084;
+    list-style-type: none;
+}
+
+/* link styles */
+nav ul li a {
+    color: #450084;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-decoration: none;
+}

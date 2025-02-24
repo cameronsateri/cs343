@@ -1,4 +1,27 @@
 /* colors.css -- Controlling the colors and borders for Lab 4
- * author:
+ * author: cameron sateri
  */
+
+/* background styles */
+body {
+    background-color: rgb(223, 210, 170);
+    margin: 0;
+}
+
+/* header styles */
+header {
+    background-color: rgb(69, 0, 132);
+    color: #ffffff;
+    padding: 1% 0;
+    border-bottom: 3px solid #dacce6;
+}
+
+/* section styles */
+section {
+    background-color: rgb(244, 239, 225); /* Cream color */
+    padding: 1% 1vw; /* 1% of viewport height for top/bottom, 1vw for left/right */
+    margin-top: 1vh;
+    border-radius: 10px;
+    border: 2px solid #dcdcdc;
+}
 
