@@ -1,0 +1,27 @@
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    min-height: 100vh;
+  }
+  
+  header, footer {
+    background-color: sandybrown;
+  }
+  
+  .middler {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  aside {
+    background-color: cornsilk;
+    flex-basis: 150px;
+  }
+  
+  main {
+    flex-grow: 1;
+    flex-basis: 0;
+  }
+  
