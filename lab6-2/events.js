@@ -7,22 +7,49 @@ const defaultLabel = 'Item';
 //   <li class="list-group-item">Item</li>
 // If the string argument is undefined, the textContent should be Item, which
 // is the defaultLabel above. Otherwise, use the string as the content.
+function buildItem(label = defaultLabel) {
+  const li = document.createElement('li');
+  li.classList.add('list-group-item');
+  li.textContent = label;
+  li.addEventListener('click', launchModal);
+  return li;
+}
 
 // TODO: Call buildItem with no arguments to create a <li> object. Add a click
 // event listener to the returned item and append it to the unordered list
 // within the collapse. The click event listener should call launchModal.
+const initialItem = buildItem();
+const list = document.querySelector('#collapseList ul');
+list.appendChild(initialItem);
 
 // TODO: Create a launchModal function that sets the label-name input to
 // show the defaultLabel string, then call modal.show().
+function launchModal() {
+  document.getElementById('label-name').value = defaultLabel;
+  modal.show();
+}
 
 (function() {
 
   // TODO: Create a reference to the collapse div in the HTML. When the 'expand'
   // button is clicked, toggle the collapse. For reference on collapses, see
   // https://getbootstrap.com/docs/5.3/components/collapse/#methods
+  const collapsable = document.getElementById('collapseList');
+
+  const expandButton = document.querySelector('button.toggle');
+  const bsCollapse = new bootstrap.Collapse(collapsable, {
+    toggle: false
+  });
+  console.log('bsCollapse', bsCollapse);
+
+  expandButton.addEventListener('click', (ev) => {
+    console.log('clicked', ev)
+    bsCollapse.toggle();
+  });
 
   // TODO: For each list item in the unordered list, add an event listener so
   // that launchModal gets called when the item is clicked.
+
 
   // TODO: When the 'add-item' button (which is a + just below the list) gets
   // clicked, call the addItem function.
