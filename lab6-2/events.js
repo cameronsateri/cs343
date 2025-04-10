@@ -7,20 +7,21 @@ const defaultLabel = 'Item';
 //   <li class="list-group-item">Item</li>
 // If the string argument is undefined, the textContent should be Item, which
 // is the defaultLabel above. Otherwise, use the string as the content.
-function buildItem(label = defaultLabel) {
-  const li = document.createElement('li');
-  li.classList.add('list-group-item');
-  li.textContent = label;
-  li.addEventListener('click', launchModal);
-  return li;
+function buildItem(label) {
+  const listItem = document.createElement('li');
+  listItem.classList.add('list-group-item');
+  listItem.textContent = label ?? defaultLabel;
+  return listItem;
 }
 
 // TODO: Call buildItem with no arguments to create a <li> object. Add a click
 // event listener to the returned item and append it to the unordered list
 // within the collapse. The click event listener should call launchModal.
-const initialItem = buildItem();
-const list = document.querySelector('#collapseList ul');
-list.appendChild(initialItem);
+function addItem() {
+  const newItem = buildItem();
+  newItem.addEventListener('click', launchModal)
+  document.getElementById('item-list').appendChild(newItem);
+}
 
 // TODO: Create a launchModal function that sets the label-name input to
 // show the defaultLabel string, then call modal.show().
@@ -36,7 +37,7 @@ function launchModal() {
   // https://getbootstrap.com/docs/5.3/components/collapse/#methods
   const collapsable = document.getElementById('collapseList');
 
-  const expandButton = document.querySelector('button.toggle');
+  const expandButton = document.getElementById('expandButton');
   const bsCollapse = new bootstrap.Collapse(collapsable, {
     toggle: false
   });
@@ -49,15 +50,27 @@ function launchModal() {
 
   // TODO: For each list item in the unordered list, add an event listener so
   // that launchModal gets called when the item is clicked.
-
+  document.querySelectorAll('#collapseList ul li').forEach(li => {
+    li.addEventListener('click', launchModal);
+  });
 
   // TODO: When the 'add-item' button (which is a + just below the list) gets
   // clicked, call the addItem function.
+  const addItemButton = document.querySelector('#collapseList button');
+  addItemButton.addEventListener('click', addItem);
 
   // TODO: When the 'save-button' (which is part of the modal) is clicked,
   // get the value from the form and update the itemLabels variable. Then loop
   // through the existing <li> elements and update their textContent to this
   // new value.
+  const saveButton = document.getElementById('save-button');
+  saveButton.addEventListener('click', function() {
+    console.log('clicked');
+    const newLabel = document.getElementById('label-name').value;
+    document.querySelectorAll('#collapseList ul li').forEach(li => {
+      li.textContent = newLabel;
+    });
+  })
 
   // DO NOT MODIFY THIS LINE:
   let search = window.location.search.substring(1);
@@ -73,5 +86,8 @@ function launchModal() {
   // (e.g., One&Two becomes [ 'One', 'Two' ]. You can then use
   // terms.map(...).forEach(...) to create and append the items in a
   // single line.
+  if (search) {
+    const terms = search.split('&');
+  }
 
 })();
